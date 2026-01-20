@@ -1,0 +1,26 @@
+PROCEDURE GET_ORDERS_BY_ORDERNO (
+    IN  P_ORDER_NO NVARCHAR(20),
+    OUT RESULT TABLE (
+        ID            NVARCHAR(36),
+        ORDERNO       NVARCHAR(20),
+        ORDERDATME    DATE,
+        STATUS        NVARCHAR(20),
+        TOTALAMOUNT   DECIMAL(13,2)
+    )
+)
+LANGUAGE SQLSCRIPT
+SQL SECURITY INVOKER
+AS
+BEGIN
+
+    RESULT =
+        SELECT
+            ID,
+            ORDERNO,
+            ORDERDATME,
+            STATUS,
+            TOTALAMOUNT
+        FROM DB_ORDERS
+        WHERE ORDERNO = :P_ORDER_NO;
+
+END;

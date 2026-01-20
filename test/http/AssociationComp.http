@@ -1,0 +1,201 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### Authors
+# @name Authors_GET
+GET {{server}}/odata/v4/my/Authors
+Authorization: Basic {{username}}:{{password}}
+
+
+### Authors
+# @name Authors_POST
+POST {{server}}/odata/v4/my/Authors
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+ 
+  "name": "Tony stark"
+}
+
+
+### Authors
+# @name Authors_PATCH
+PATCH {{server}}/odata/v4/my/Authors/93896196-e5d4-4f9b-aa31-37b946749f1b
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "authorID": "93896196-e5d4-4f9b-aa31-37b946749f1b",
+  "name": "name-938961"
+}
+
+
+### Authors
+# @name Authors_DELETE
+DELETE {{server}}/odata/v4/my/Authors/93896196-e5d4-4f9b-aa31-37b946749f1b
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+@username=alice
+@password=
+
+
+### Book
+# @name Book_GET
+GET {{server}}/odata/v4/my/Book
+Authorization: Basic {{username}}:{{password}}
+
+
+### Book
+# @name Book_POST
+POST {{server}}/odata/v4/my/Book
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  
+  "Bookname": "Rich Dad Poor Dad",
+  "author_authorID":"f2f08198-e7c1-48b5-a673-886b4f6c16ac"
+}
+
+
+### Book
+# @name Book_PATCH
+PATCH {{server}}/odata/v4/my/Book/27222188-9328-44d0-8901-a34797ad7988
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "BookID": "27222188-9328-44d0-8901-a34797ad7988",
+  "Bookname": "2013-04-29"
+}
+
+
+### Book
+# @name Book_DELETE
+DELETE {{server}}/odata/v4/my/Book/27222188-9328-44d0-8901-a34797ad7988
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+####==============================================Compostion=================================
+
+@username=alice
+@password=
+
+
+### SalesOrders
+# @name SalesOrders_GET
+GET {{server}}/odata/v4/my/SalesOrders
+Authorization: Basic {{username}}:{{password}}
+
+
+### SalesOrders
+# @name SalesOrders_POST
+POST {{server}}/odata/v4/my/SalesOrders
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+ 
+  "SOname": "SOname-1125322",
+  "items": [
+    {
+     
+      "product": "product-29468488",
+      "qty": 32
+    },
+    {
+      
+      "product": "product-29468489",
+      "qty": 78
+    }
+  ]
+}
+
+
+### SalesOrders
+# @name SalesOrders_PATCH
+PATCH {{server}}/odata/v4/my/SalesOrders/1125322f-cbf9-48d0-804a-699e8a5609b0
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "SOID": "1125322f-cbf9-48d0-804a-699e8a5609b0",
+  "SOname": "SOname-1125322",
+  "items": [
+    {
+      "SID": "29468488-31eb-4068-b35c-50b608cf722f",
+      "product": "product-29468488",
+      "qty": 32
+    },
+    {
+      "SID": "29468489-ac4f-4040-a41d-54c767ec2305",
+      "product": "product-29468489",
+      "qty": 78
+    }
+  ]
+}
+
+
+### SalesOrders
+# @name SalesOrders_DELETE
+DELETE {{server}}/odata/v4/my/SalesOrders/1125322f-cbf9-48d0-804a-699e8a5609b0
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+###==================Student=========================
+
+@username=alice
+@password=
+
+
+### Student
+# @name Student_GET
+GET {{server}}/odata/v4/my/Student
+Authorization: Basic {{username}}:{{password}}
+
+
+### Student
+# @name Student_POST
+POST {{server}}/odata/v4/my/Student
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "19878810-6256-449d-af89-f5ac8a20824b",
+  "Class": "12th",
+  "name":"raja ",
+  "email": "abce@email.com",
+  "Marks": 749922928.37,
+  "isActive": true,
+  "Delmark": 45
+}
+
+
+### Student
+# @name Student_PATCH
+PATCH {{server}}/odata/v4/my/Student/19878810-6256-449d-af89-f5ac8a20824b
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "19878810-6256-449d-af89-f5ac8a20824b",
+  "Class": "s-19878810",
+  "name": "name-19878810",
+  "email": "email-19878810",
+  "Marks": 749922928.37,
+  "isActive": true,
+  "Delmark": 45
+}
+
+
+### Student
+# @name Student_DELETE
+DELETE {{server}}/odata/v4/my/Student/19878810-6256-449d-af89-f5ac8a20824b
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+

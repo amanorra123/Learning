@@ -1,0 +1,183 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### Employees
+# @name Employees_GET
+GET {{server}}/odata/v4/my/Employees
+Authorization: Basic {{username}}:{{password}}
+
+
+### Employees
+# @name Employees_POST
+POST {{server}}/odata/v4/my/Employees
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+
+  "empCode": "UT13",
+  "name": "aman",
+  "email":"aman123@gmail.com",
+  "salary": 72000
+
+}
+
+
+### Employees
+# @name Employees_PATCH
+PATCH {{server}}/odata/v4/my/Employees/18322503-8c2d-4af7-8031-ac2b5fa0e5e0
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "18322503-8c2d-4af7-8031-ac2b5fa0e5e0",
+  "empCode": "de-1832250",
+  "name": "name-1832250",
+  "email": "email-1832250",
+  "salary": 18999477.21,
+  "isActive": true
+}
+
+
+### Employees
+# @name Employees_DELETE
+DELETE {{server}}/odata/v4/my/Employees/18322503-8c2d-4af7-8031-ac2b5fa0e5e0
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+@username=alice
+@password=
+
+
+### Orders
+# @name Orders_GET
+GET {{server}}/odata/v4/my/Orders
+Authorization: Basic {{username}}:{{password}}
+
+
+### Orders
+# @name Orders_POST
+POST {{server}}/odata/v4/my/Orders
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+ 
+  "orderNo": "23",
+  "orderDatme": "2003-11-09",
+  "status": "Pending",
+  "totalAmount": 2323.33
+}
+
+
+### Orders
+# @name Orders_PATCH
+PATCH {{server}}/odata/v4/my/Orders/4972271d-51c1-4c0d-916a-8d0b83713ae7
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+      "ID": "2087d7a6-199f-4ae6-bbe0-addb8ac1cb83",
+      "orderDatme": "2003-11-09",
+      "orderNo": "orderNo-4972271",
+      "status": "Pending",
+      "totalAmount": "51009857509.25"
+    }
+
+
+### Orders
+# @name Orders_DELETE
+DELETE {{server}}/odata/v4/my/Orders/4972271d-51c1-4c0d-916a-8d0b83713ae7
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+
+
+
+### Action
+# @name OrdeapproveOrderrs_DELETE
+POST {{server}}/odata/v4/my/approveOrder
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "orderID":"8bc7c953-c14e-49a4-9fc5-4fd5dcffb60a",
+  "Status":"Now Approved"
+}
+
+
+
+
+
+
+### Action
+# @name OrdeapproveOrderrs_DELETE
+POST {{server}}/odata/v4/my/getOrdersByOrderNo
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "orderNo":"23"
+}
+
+##################################################################
+
+@username=alice
+@password=
+
+
+### Products
+# @name Products_GET
+GET {{server}}/odata/v4/my/Products
+Authorization: Basic {{username}}:{{password}}
+
+
+### Products
+# @name Products_POST
+POST {{server}}/odata/v4/my/Products
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": 20978490,
+  "name": "name-20978490"
+}
+
+
+### Products
+# @name Products_PATCH
+PATCH {{server}}/odata/v4/my/Products/20978490
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": 20978490,
+  "name": "name-20978490",
+  "createdAt": "2011-04-23T00:00:00.000Z"
+}
+
+
+### Products
+# @name Products_DELETE
+DELETE {{server}}/odata/v4/my/Products/20978490
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+###########BOUND action and function
+### Orders
+# @name Orders_GET
+GET {{server}}/odata/v4/my/Orders(2087d7a6-199f-4ae6-bbe0-addb8ac1cb83)/getStatus()
+Authorization: Basic {{username}}:{{password}}
+
+
+###########BOUND action and function
+### Orders
+# @name Orders_GET
+POST  {{server}}/odata/v4/my/Orders(2087d7a6-199f-4ae6-bbe0-addb8ac1cb83)/Approved
+Authorization: Basic {{username}}:{{password}}
+
