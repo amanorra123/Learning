@@ -1,7 +1,9 @@
 using {db} from '../db/schema';
 
 service MyService {
-
+@requires: 'authenticated-user'
+@cds.redirection.target
+@odata.draft.enabled: true
   entity Employees       as projection on db.Employees;
   // entity Authors         as projection on db.Authors;
   // entity Book            as projection on db.Book;
