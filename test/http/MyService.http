@@ -181,3 +181,10 @@ Authorization: Basic {{username}}:{{password}}
 POST  {{server}}/odata/v4/my/Orders(2087d7a6-199f-4ae6-bbe0-addb8ac1cb83)/Approved
 Authorization: Basic {{username}}:{{password}}
 
+
+
+### sendPdfEmail
+# @name sendPdfEmail
+POST  {{server}}/odata/v4/email/sendPdfEmail
+Authorization: Basic {{username}}:{{password}}
+
